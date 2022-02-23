@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  northwind:
+    image: northwind
+    build:
+      context: .
+      dockerfile: ./Dockerfile
