@@ -18,6 +18,9 @@ export class CategoryComponent implements OnInit {
   setCurrentCategory(category:Category){
     this.currentCategory=category;
   }
+  setCurrentProduct(){
+    
+  }
   getCategories(){
     this.categoryService.getCategories().subscribe(response=>{
       this.categories=response.data;
@@ -25,6 +28,14 @@ export class CategoryComponent implements OnInit {
   }
   getCurrentCategoryClass(category:Category){
     if(category==this.currentCategory){
+      return "list-group-item active";
+    }
+    else{
+      return "list-group-item";
+    }
+  }
+  getAllCategoryClass(){
+    if(!this.currentCategory){
       return "list-group-item active";
     }
     else{
